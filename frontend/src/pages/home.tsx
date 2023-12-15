@@ -56,7 +56,7 @@ const Home: FC = () => {
 
           const response = await axios.get(metadataURI);
 
-          temp.push({ ...response.data, tokenId: searchTokenId });
+          temp.push({ ...response.data, tokenId: searchTokenId - i });
         }
       }
 

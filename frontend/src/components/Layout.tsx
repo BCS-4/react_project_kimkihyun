@@ -6,6 +6,7 @@ import { useSDK } from "@metamask/sdk-react";
 import Header from "./Header";
 import mintNftAbi from "../abis/mintNftAbi.json";
 import saleNftAbi from "../abis/saleNftAbi.json";
+import { MINT_NFT_CONTRACT, SALE_NFT_CONTRACT } from "../abis/contractsAddress";
 
 const Layout: FC = () => {
   const [account, setAccount] = useState<string>("");
@@ -26,18 +27,8 @@ const Layout: FC = () => {
   useEffect(() => {
     if (!web3) return;
 
-    setMintNftContract(
-      new web3.eth.Contract(
-        mintNftAbi,
-        "0xF58605CE70C1a7F2e21F9b9535eBf83C39b6e30E"
-      )
-    );
-    setSaleNftContract(
-      new web3.eth.Contract(
-        saleNftAbi,
-        "0xbd237Eb74f74fA3dC50458f5Ac98465E1183c3E8"
-      )
-    );
+    setMintNftContract(new web3.eth.Contract(mintNftAbi, MINT_NFT_CONTRACT));
+    setSaleNftContract(new web3.eth.Contract(saleNftAbi, SALE_NFT_CONTRACT));
   }, [web3]);
 
   return (

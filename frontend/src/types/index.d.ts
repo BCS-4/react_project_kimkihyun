@@ -4,6 +4,7 @@ export interface OutletContext {
   account: string;
   web3: Web3;
   mintNftContract: Contract<ContractAbi>;
+  saleNftContract: Contract<ContractAbi>;
 }
 
 export interface NftMetadata {
