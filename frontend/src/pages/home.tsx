@@ -4,7 +4,7 @@ import { NftMetadata, OutletContext } from "../types";
 import axios from "axios";
 import NftCard from "../components/NftCard";
 
-const GET_AMOUNT = 6;
+const GET_AMOUNT = 10;
 
 const Home: FC = ({}) => {
   const [searchTokenId, setSearchTokenId] = useState<number>(0);

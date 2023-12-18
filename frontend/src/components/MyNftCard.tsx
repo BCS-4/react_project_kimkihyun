@@ -72,6 +72,7 @@ const MyNftCard: FC<MyNftCardProps> = ({
               type="text"
               className="border-2 border-gray-400 rounded-lg mr-2 mt-4 focus:outline-none pl-2"
               value={price}
+              placeholder="ETH"
               onChange={(e) => setPrice(e.target.value)}
             />
             <input
