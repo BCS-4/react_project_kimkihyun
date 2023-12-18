@@ -5,14 +5,31 @@ import { NftMetadata, OutletContext } from "../types";
 import axios from "axios";
 import MyNftCard from "../components/MyNftCard";
 import { SALE_NFT_CONTRACT } from "../abis/contractsAddress";
+import { HiOutlineRefresh } from "react-icons/hi";
 
 const My: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [metadataArray, setMetadataArray] = useState<NftMetadata[]>([]);
   const [saleStatus, setSaleStatus] = useState<boolean>(false);
   const { mintNftContract, account } = useOutletContext<OutletContext>();
+  const [nftitems, setNftItems] = useState<any>();
 
   const navigate = useNavigate();
+
+  const getNftSupply = async () => {
+    try {
+      if (!mintNftContract) return;
+
+      const nftitems = await mintNftContract.methods
+        // @ts-expect-error
+        .balanceOf(account)
+        .call();
+
+      setNftItems(Number(nftitems));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const onClickMintModal = () => {
     if (!account) return;
@@ -95,21 +112,35 @@ const My: FC = () => {
     getSaleStatus();
   }, [account]);
 
+  useEffect(() => {
+    getNftSupply();
+  }, [mintNftContract]);
+
   return (
     <>
       <div className="grow">
-        <div className="flex justify-between p-2">
-          <button className="hover:text-gray-500" onClick={onClickSaleStatus}>
+        <div className="flex flex-col p-2">
+          <div className="flex font-semibold">
             Sale Approved : {saleStatus ? "TRUE" : "FALSE"}
-          </button>
-          <button className="hover:text-gray-500" onClick={onClickMintModal}>
+            <button
+              className="hover:text-gray-200 ml-2"
+              onClick={onClickSaleStatus}
+            >
+              <HiOutlineRefresh />
+            </button>
+          </div>
+          <button
+            className="hover:text-gray-200 text-left mt-2 bg-blue-400 w-fit px-2 py-1 rounded-xl font-semibold"
+            onClick={onClickMintModal}
+          >
             Mint
           </button>
         </div>
         <div className="text-center py-8">
-          <h1 className="font-bold text-2xl">My NFTs</h1>
+          <h1 className="font-bold text-4xl font-Giants">My NFTs</h1>
         </div>
-        <ul className="p-8 grid grid-cols-2 gap-8">
+        <div className="pl-8 mt-14 font-Giants">{nftitems} items</div>
+        <ul className="p-8 grid grid-cols-5 gap-8">
           {metadataArray?.map((v, i) => (
             <MyNftCard
               key={i}

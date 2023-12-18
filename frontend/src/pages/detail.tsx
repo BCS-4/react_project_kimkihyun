@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { useOutletContext, useParams, useNavigate } from "react-router-dom";
 import { NftMetadata, OutletContext } from "../types";
 import axios from "axios";
+import { IoIosArrowBack } from "react-icons/io";
 
 const Detail: FC = () => {
   const [metadata, setMetadata] = useState<NftMetadata>();
@@ -39,21 +40,34 @@ const Detail: FC = () => {
         className="absolute top-8 left-8 hover:text-gray-500"
         onClick={() => navigate(-1)}
       >
-        Back
+        <IoIosArrowBack className="text-4xl" />
       </button>
       {metadata && (
-        <div className="w-60">
-          <img className="w-60 h-60" src={metadata.image} alt={metadata.name} />
-          <div className="font-semibold mt-1">{metadata.name}</div>
-          <div className="mt-1">{metadata.description}</div>
-          <ul className="mt-1 flex flex-wrap gap-1">
-            {metadata.attributes.map((v, i) => (
-              <li key={i}>
-                <span className="font-semibold">{v.trait_type}</span>
-                <span>: {v.value}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="">
+          <img
+            className="w-[380px] h-[380px] ml-[50px]"
+            src={metadata.image}
+            alt={metadata.name}
+          />
+          <div>
+            <div className="font-semibold mt-1 mb-5 text-2xl text-center">
+              {metadata.name}
+            </div>
+            <div className="mb-5 text-center">{metadata.description}</div>
+            <ul className="grid grid-cols-3 gap-1">
+              {metadata.attributes.map((v, i) => (
+                <li
+                  key={i}
+                  className="flex flex-wrap flex-col text-center w-[140px] m-2 py-2 rounded-xl bg-slate-400"
+                >
+                  <span className="font-semibold text-lg font-Giants">
+                    {v.trait_type}
+                  </span>
+                  <span> {v.value}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </div>

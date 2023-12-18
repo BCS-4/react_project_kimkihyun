@@ -8,29 +8,11 @@ export interface NftCardProps {
 }
 
 const NftCard: FC<NftCardProps> = ({ image, name, tokenId }) => {
-  const [isHover, setIsHover] = useState<boolean>(false);
-
-  const onMouseEnter = () => {
-    setIsHover(true);
-  };
-
-  const onMouseLeave = () => {
-    setIsHover(false);
-  };
-
   return (
     <Link to={`/detail/${tokenId}`}>
-      <li
-        className="relative"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        <img src={image} alt={name} />
-        <div className="font-semibold mt-1">{name}</div>
-
-        {isHover && (
-          <div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-50"></div>
-        )}
+      <li className="relative hover:scale-110 duration-300">
+        <img src={image} alt={name} className="rounded-xl" />
+        <div className="font-Giants text-s mt-1 text-sm">{name}</div>
       </li>
     </Link>
   );

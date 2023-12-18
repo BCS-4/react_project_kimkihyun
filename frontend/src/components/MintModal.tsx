@@ -2,6 +2,7 @@ import { Dispatch, FC, SetStateAction, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import axios from "axios";
 import { NftMetadata, OutletContext } from "../types";
+import { ImSpinner3 } from "react-icons/im";
 
 interface MintModalProps {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -87,11 +88,19 @@ const MintModal: FC<MintModalProps> = ({
           </div>
         ) : (
           <>
-            <div>{isLoading ? "로딩중..." : "NFT를 민팅하시겠습니까?"}</div>
-            <div className="text-center mt-4">
-              <button className="hover:text-gray-500" onClick={onClickMint}>
-                확인
-              </button>
+            <div className="flex flex-col  items-center">
+              <div>
+                {isLoading ? (
+                  <ImSpinner3 className="animate-spin" />
+                ) : (
+                  "NFT를 민팅하시겠습니까?"
+                )}
+              </div>
+              <div className="text-center mt-4">
+                <button className="hover:text-gray-500" onClick={onClickMint}>
+                  확인
+                </button>
+              </div>
             </div>
           </>
         )}
