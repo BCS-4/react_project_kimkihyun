@@ -17,3 +17,17 @@
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1703666042283?alt=media&token=045634a3-b019-4fef-8294-fee0f9170cb4)](https://github.com/msdio/stackticon)
 
 ## 폴더 컨벤션
+```
+📦 React-Project
+| 
++------🗂 contracts      // solidity 코드
+|       |
+|       +------🗂 MintNFT.sol    // nft minting 코드
+|       |
+|       +------🗂 SaleNFT.sol    // nft sale 코드
+|
+|
+|
+|
++------🗂 frontend      // frontend 전반적인 코드
+```
