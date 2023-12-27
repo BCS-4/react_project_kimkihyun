@@ -14,4 +14,13 @@
   *기능 : nft minting, nft 판매 및 구매
 
 ## 활용 기술
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1703665668072?alt=media&token=d4649477-e809-4f46-b948-15141d38afa0)](https://github.com/msdio/stackticon)
+
+## 폴더 컨벤션
+📦 starcket
+| 
++------🗂 code      // 사용된 코드 모음
+        |
+        +------🗂 login.html    // 로그인 화면 html
+        |
+        +------🗂 login.css    // 로그인 화면 css
