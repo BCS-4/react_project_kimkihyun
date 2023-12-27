@@ -8,10 +8,10 @@
 
 
 ## 사이트 소개
-  *이 사이트는 간단하게 ***NFT***를 Minting하는 사이트 입니다.
+  >-이 사이트는 간단하게 ***NFT***를 Minting하는 사이트 입니다.
 
 ## 기능
-  *기능 : nft minting, nft 판매 및 구매
+  >-기능 : nft minting, nft 판매 및 구매
 
 ## 활용 기술
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1703666042283?alt=media&token=045634a3-b019-4fef-8294-fee0f9170cb4)](https://github.com/msdio/stackticon)
