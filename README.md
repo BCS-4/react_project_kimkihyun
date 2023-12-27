@@ -17,10 +17,3 @@
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1703666042283?alt=media&token=045634a3-b019-4fef-8294-fee0f9170cb4)](https://github.com/msdio/stackticon)
 
 ## 폴더 컨벤션
-`📦 starcket
-| 
-+------🗂 code      // 사용된 코드 모음
-        |
-        +------🗂 login.html    // 로그인 화면 html
-        |
-        +------🗂 login.css    // 로그인 화면 css`
