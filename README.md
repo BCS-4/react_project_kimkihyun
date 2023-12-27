@@ -26,8 +26,5 @@
 |       |
 |       +------🗂 SaleNFT.sol    // nft sale 코드
 |
-|
-|
-|
 +------🗂 frontend      // frontend 전반적인 코드
 ```
