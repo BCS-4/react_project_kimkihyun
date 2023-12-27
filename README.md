@@ -14,13 +14,13 @@
   *기능 : nft minting, nft 판매 및 구매
 
 ## 활용 기술
-[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1703665668072?alt=media&token=d4649477-e809-4f46-b948-15141d38afa0)](https://github.com/msdio/stackticon)
+[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1703666042283?alt=media&token=045634a3-b019-4fef-8294-fee0f9170cb4)](https://github.com/msdio/stackticon)
 
 ## 폴더 컨벤션
-📦 starcket
+`📦 starcket
 | 
 +------🗂 code      // 사용된 코드 모음
         |
         +------🗂 login.html    // 로그인 화면 html
         |
-        +------🗂 login.css    // 로그인 화면 css
+        +------🗂 login.css    // 로그인 화면 css`
